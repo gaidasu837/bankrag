@@ -13,7 +13,7 @@ from bankrag.import_graph import load_records
 
 def main():
     load_records(ROOT / 'data/icbc.sqlite3')
-    paths = [ROOT / n for n in ('README.md', 'MIGRATION.md', 'environment.yml', 'compose.yaml', '.gitignore')]
+    paths = [ROOT / n for n in ('README.md', 'MIGRATION.md', 'INSTALL_WINDOWS.md', 'environment.yml', 'compose.yaml', '.gitignore')]
     for folder in ('src', 'tests', 'config', 'schemas', 'scripts'):
         paths.extend(p for p in (ROOT / folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc')
     out = ROOT / 'dist'

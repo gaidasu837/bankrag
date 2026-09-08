@@ -1,5 +1,7 @@
 # 新电脑恢复（Anaconda Prompt / CMD）
 
+详细步骤见 [完整安装教程](INSTALL_WINDOWS.md)。克隆后进入bankrag目录，执行 `python -m zipfile -e dist/bankrag-portable.zip restored`，再 `cd restored` 后执行下文命令。
+
 安装 Miniconda/Anaconda 和 Docker Desktop，并启动 Docker Desktop Linux 引擎。
 解压 bankrag-portable.zip 到任意目录，在 Anaconda Prompt 切换至解压后的项目目录。
 也可从私有 GitHub 仓库克隆：`git clone https://github.com/gaidasu837/bankrag.git`。
@@ -25,8 +27,8 @@ netstat -ano | findstr "LISTENING" | findstr ":17474 :17687"
 ```bat
 set /p BANKRAG_PASSWORD=Neo4j password (12 or more letters and digits):
 docker compose up -d
-set BANKRAG_PASSWORD=
 docker compose logs --tail 60 neo4j
+set BANKRAG_PASSWORD=
 ```
 
 日志出现 Started. 后：
