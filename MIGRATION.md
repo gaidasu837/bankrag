@@ -1,5 +1,7 @@
 # 新电脑恢复（Anaconda Prompt / CMD）
 
+最新迁移包同时包含抽取结果和问答界面。完成本页证据图恢复后，按 [问答恢复说明](QA_GUIDE.md) 重建12条声明并启动页面。
+
 详细步骤见 [完整安装教程](INSTALL_WINDOWS.md)。克隆后进入bankrag目录，执行 `python -m zipfile -e dist/bankrag-portable.zip restored`，再 `cd restored` 后执行下文命令。
 
 安装 Miniconda/Anaconda 和 Docker Desktop，并启动 Docker Desktop Linux 引擎。

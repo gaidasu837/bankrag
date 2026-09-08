@@ -8,3 +8,7 @@ dist/
 *.pem
 data/raw/*.json
 data/processed/*.jsonl
+data/processed/pilot-*/
+data/*.sqlite3*
+data/raw/*.html
+data/collection_report.json

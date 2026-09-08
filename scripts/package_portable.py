@@ -13,7 +13,11 @@ from bankrag.import_graph import load_records
 
 def main():
     load_records(ROOT / 'data/icbc.sqlite3')
-    paths = [ROOT / n for n in ('README.md', 'MIGRATION.md', 'INSTALL_WINDOWS.md', 'environment.yml', 'compose.yaml', '.gitignore')]
+    paths = [ROOT / n for n in ('README.md', 'MIGRATION.md', 'INSTALL_WINDOWS.md', 'QA_GUIDE.md', 'environment.yml', 'compose.yaml', '.gitignore')]
+    pilot = ROOT / 'data/processed/pilot-20260908T065602050283Z'
+    from bankrag.review_pilot import build
+    build(pilot, ROOT / 'data/icbc.sqlite3')
+    paths.extend(pilot / name for name in ('001.json', '002.json'))
     for folder in ('src', 'tests', 'config', 'schemas', 'scripts'):
         paths.extend(p for p in (ROOT / folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc')
     out = ROOT / 'dist'
@@ -45,6 +49,8 @@ def main():
             z.extractall(stage / 'restore')
         docs, chunks = load_records(stage / 'restore/data/icbc.sqlite3')
         print(f'Restored and verified: {len(docs)} documents, {len(chunks)} chunks')
+        review = build(stage / 'restore/data/processed' / pilot.name, stage / 'restore/data/icbc.sqlite3')
+        print('Restored reviewed assertions:', len(review['assertions']))
     print(archive)
 
 if __name__ == '__main__':
