@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+.env
+.env.*
+*.key
+*.pem
+data/raw/*.json
+data/processed/*.jsonl

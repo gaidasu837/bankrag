@@ -1,0 +1,31 @@
+bank: 中国工商银行
+official_domains:
+  - icbc.com.cn
+  - www.icbc.com.cn
+  - v.icbc.com.cn
+sources:
+  - id: icbc_personal_portal
+    title: 中国工商银行个人金融频道
+    url: https://www.icbc.com.cn/page/1.html
+    category: product_catalog
+    priority: 1
+  - id: icbc_personal_faq
+    title: 中国工商银行个人金融热点问答
+    url: https://www.icbc.com.cn/icbc/客户服务/热点问答/个人金融/default-PageList-3.htm
+    category: faq
+    priority: 1
+  - id: icbc_customer_service
+    title: 中国工商银行客户服务
+    url: https://www.icbc.com.cn/ICBC/客户服务/service.htm
+    category: service_guide
+    priority: 1
+  - id: icbc_agreements
+    title: 中国工商银行业务协议
+    url: https://www.icbc.com.cn/page/721853401276383272.html
+    category: agreement
+    priority: 1
+  - id: icbc_financial_reports
+    title: 中国工商银行财务报告
+    url: https://www.icbc.com.cn/ICBCLtd/投资者关系/财务信息/财务报告/default.htm
+    category: disclosure
+    priority: 2
